@@ -16,7 +16,7 @@ rcParams['figure.figsize'] = 12, 6
 
 # read data
 dateparse = lambda dates: pd.datetime.strptime(dates, '%Y-%m')
-data = pd.read_csv('AirPassengers.csv', parse_dates='Month', index_col='Month',date_parser=dateparse)
+data = pd.read_csv('./data/AirPassengers.csv', parse_dates='Month', index_col='Month',date_parser=dateparse)
 print data.head()
 ts = data['Passengers']
 
