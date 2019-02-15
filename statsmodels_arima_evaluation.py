@@ -61,11 +61,11 @@ def compare_ARIMA_modes_testing(order):
             'MSE predict': error_p}
 
 ar_testing = compare_ARIMA_modes_testing((1, 0, 0))
-ma_testing = compare_ARIMA_modes_testing((0, 1, 0))
-ig_testing = compare_ARIMA_modes_testing((0, 0, 1))
-arma_testing = compare_ARIMA_modes_testing((1, 1, 0))
+ig_testing = compare_ARIMA_modes_testing((0, 1, 0))
+ma_testing = compare_ARIMA_modes_testing((0, 0, 1))
+arig_testing = compare_ARIMA_modes_testing((1, 1, 0))
 igma_testing = compare_ARIMA_modes_testing((0, 1, 1))
-arig_testing = compare_ARIMA_modes_testing((1, 0, 1))
+arma_testing = compare_ARIMA_modes_testing((1, 0, 1))
 arima_testing = compare_ARIMA_modes_testing((1, 1, 1))
 
 # forecast and predict are identical for AR
@@ -102,7 +102,7 @@ def compare_ARIMA_modes(order):
         predictions_f.append(yhat_f)
         predictions_p.append(yhat_p)
         history_f.append(yhat_f)
-        history_f.append(yhat_p)
+        history_p.append(yhat_p)
     error_f = mean_squared_error(test, predictions_f)
     error_p = mean_squared_error(test, predictions_p)
     print('MSE forecast:\t\t\t{:1.4f}'.format(error_f))
@@ -113,11 +113,11 @@ def compare_ARIMA_modes(order):
             'MSE predict': error_p}
 
 ar = compare_ARIMA_modes((1, 0, 0))
-ma = compare_ARIMA_modes((0, 1, 0))
-ig = compare_ARIMA_modes((0, 0, 1))
-arma = compare_ARIMA_modes((1, 1, 0))
+ig = compare_ARIMA_modes((0, 1, 0))
+ma = compare_ARIMA_modes((0, 0, 1))
+arig = compare_ARIMA_modes((1, 1, 0))
 igma = compare_ARIMA_modes((0, 1, 1))
-arig = compare_ARIMA_modes((1, 0, 1))
+arma = compare_ARIMA_modes((1, 0, 1))
 arima = compare_ARIMA_modes((1, 1, 1))
 
 # forecast and predict are different for AR
@@ -156,11 +156,11 @@ def compare_ARIMA_modes_steps(order):
             'MSE predict': error_p_ms}
 
 ar_steps = compare_ARIMA_modes_steps((1, 0, 0))
-ma_steps = compare_ARIMA_modes_steps((0, 1, 0))
-ig_steps = compare_ARIMA_modes_steps((0, 0, 1))
-arma_steps = compare_ARIMA_modes_steps((1, 1, 0))
+ig_steps = compare_ARIMA_modes_steps((0, 1, 0))
+ma_steps = compare_ARIMA_modes_steps((0, 0, 1))
+arig_steps = compare_ARIMA_modes_steps((1, 1, 0))
 igma_steps = compare_ARIMA_modes_steps((0, 1, 1))
-arig_steps = compare_ARIMA_modes_steps((1, 0, 1))
+arma_steps = compare_ARIMA_modes_steps((1, 0, 1))
 arima_steps = compare_ARIMA_modes_steps((1, 1, 1))
 
 # forecast and predict are identical for AR
